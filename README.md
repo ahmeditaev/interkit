@@ -1,1 +1,1 @@
-[Open in browser](https://ahmeditaev.github.io/interkit/build/)
+[Open in browser](https://ahmeditaev.github.io/interkit/)
