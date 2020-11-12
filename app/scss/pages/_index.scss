@@ -1,0 +1,17 @@
+#page {
+
+}
+.promo-block {
+  position: relative;
+  padding-top: 32px;
+  background: rgb(10,8,13);
+  background: linear-gradient(90deg, rgba(10,8,13,1) 16.85%, rgba(11,10,15,1) 100%);
+  .main-title {
+    position: absolute;
+    font-size: 64px;
+    line-height: 74px;
+    color: #ffffff;
+    max-width: 40%;
+    top: 160px;
+  }
+}
