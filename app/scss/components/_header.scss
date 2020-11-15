@@ -6,7 +6,7 @@
 .header {
   @extend .base-flex-style;
   justify-content: space-between;
-  color: #ffffff;
+  color: $white-color;
   .main-logo {
     display: block;
     line-height: 0;
@@ -48,7 +48,7 @@
         color: rgba(255, 255, 255, 0.48);
       }
       &__item.active {
-        color: #ffffff;
+        color: $white-color;
       }
     }
   }

@@ -1,6 +1,11 @@
 body {
   font-family: 'TT Commons', Arial, sans-serif;
   font-size: 18px;
+  color: $main-color;
+}
+
+#page {
+  padding: 0 40px;
 }
 
 .container {
@@ -8,4 +13,10 @@ body {
   max-width: 1288px;
   width: 100%;
   margin: 0 auto;
+}
+
+.section-title {
+  font-size: 64px;
+  line-height: 74px;
+  color: $black-color;
 }

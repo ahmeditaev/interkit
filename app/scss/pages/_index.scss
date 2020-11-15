@@ -1,7 +1,4 @@
-#page {
-
-}
-.promo-block {
+.promo {
   position: relative;
   padding-top: 32px;
   background: rgb(10,8,13);
@@ -10,8 +7,76 @@
     position: absolute;
     font-size: 64px;
     line-height: 74px;
-    color: #ffffff;
+    color: $white-color;
     max-width: 40%;
     top: 160px;
+  }
+}
+
+.about {
+  padding: 80px 0;
+  .section-title {
+    margin-bottom: 21px;
+  }
+  .about-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    &__description {
+      font-size: 32px;
+      letter-spacing: .02em;
+      line-height: 43px;
+      width: 72%;
+    }
+    &__numbers {
+      width: 24%;
+      padding-right: 21px;
+      letter-spacing: 0.04em;
+      > span {
+        font-size: 72px;
+        display: block;
+        margin-bottom: 13px;
+      }
+    }
+  }
+  .advantage-list {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fill, minMax(286px, 1fr));
+    &__item {
+      .icon {
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 24px;
+      }
+      .design-icon {
+        background: url("../images/interface-design-icon.svg") 50%/cover no-repeat;
+      }
+      .audit-icon {
+        background: url("../images/app-audit-icon.svg") 50%/cover no-repeat;
+      }
+      .support-icon {
+        width: 80px;
+        height: 54px;
+        margin-bottom: 30px;
+        background: url("../images/support-icon.svg") 50%/cover no-repeat;
+      }
+      .outstaff-icon {
+        background: url("../images/outstaff-icon.svg") 50%/cover no-repeat;
+      }
+      .title {
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+      }
+      .description {
+        line-height: 25px;
+        letter-spacing: 0.02em;
+        color: $secondary-color;
+      }
+    }
   }
 }
