@@ -15,7 +15,7 @@
 }
 
 .about {
-  padding: 80px 0;
+  padding: 80px 40px;
   .section-title {
     margin-bottom: 21px;
   }
@@ -198,6 +198,36 @@
         line-height: 20px;
         letter-spacing: 0.02em;
         opacity: 0.8;
+      }
+    }
+  }
+}
+
+.statistics {
+  padding: 80px 40px;
+  .section-title {
+    margin-bottom: 40px;
+  
+  }
+  .statistics-list {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minMax(310px, 1fr));
+    &__item {
+      .numbers {
+        display: block;
+        letter-spacing: 2px;
+        font-size: 96px;
+        margin-bottom: 8px;
+        color: #3A2390; // If the gradient doesn't work
+        background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .description {
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0.02em;
       }
     }
   }
