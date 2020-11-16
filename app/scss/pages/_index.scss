@@ -232,3 +232,54 @@
     }
   }
 }
+
+.tools {
+  padding: 0 40px;
+  .tools-wrap {
+    padding: 80px 40px 40px;
+    background: $main-color;
+    color: $white-color;
+    border-radius: 16px;
+    .section-title {
+      color: $white-color;
+      margin-bottom: 16px;
+    }
+  }
+  .tools-list {
+  
+  }
+  .tools-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,.16);
+    .info {
+      width: 45%;
+      .title {
+        font-size: 48px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+      }
+      .description {
+        line-height: 25px;
+        letter-spacing: 0.04em;
+      }
+    }
+    .icon-list {
+      display: grid;
+      grid-gap: 20px;
+      width: 50%;
+      grid-template-columns: repeat(auto-fill, minMax(110px, 1fr));
+      &__item {
+        display: flex;
+        align-items: center;
+        img {
+          width: auto;
+          height: auto;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
