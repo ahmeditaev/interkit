@@ -1,21 +1,36 @@
 .promo {
   position: relative;
-  padding-top: 32px;
+  padding: 32px 40px 60px;
   background: #0A080D;
   background: linear-gradient(107.01deg, #0A080D 38.67%, #0B0A0F 203.3%);
-  
+  @include max-width-1024 {
+    padding: 32px 20px 40px;
+  }
   .main-title {
     position: absolute;
     font-size: 64px;
     line-height: 74px;
     color: $white-color;
-    max-width: 40%;
     top: 160px;
+    > span {
+      display: block;
+    }
+    @include max-width-1280 {
+      font-size: 56px;
+      line-height: 56px;
+    }
+    @include max-width-1120 {
+      font-size: 46px;
+      line-height: 46px;
+    }
   }
 }
 
 .about {
   padding: 80px 40px;
+  @include max-width-1024 {
+    padding: 40px 20px;
+  }
   .section-title {
     margin-bottom: 21px;
   }
@@ -45,8 +60,16 @@
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fill, minMax(286px, 1fr));
+    @include max-width-1024 {
+      grid-template-columns: repeat(auto-fill, minMax(320px, 1fr));
+    }
   }
   .advantage-list__item {
+    display: flex;
+    flex-direction: column;
+    @include max-width-1024 {
+      align-items: center;
+    }
     .icon {
       display: block;
       width: 64px;
@@ -78,6 +101,9 @@
       line-height: 25px;
       letter-spacing: 0.02em;
       color: $secondary-color;
+      @include max-width-1024 {
+        text-align: center;
+      }
     }
   }
 }
@@ -85,13 +111,17 @@
 .our-works {
   .section-title {
     margin-bottom: 24px;
-  }
-  .app-list {
-  
+    padding: 0 40px;
+    @include max-width-1024 {
+      padding: 0 20px;
+    }
   }
   .app-list__item {
     padding: 80px 40px;
     letter-spacing: 1px;
+    @include max-width-1024 {
+      padding: 40px 20px;
+    }
     &.shake-app {
       color: $white-color;
       background: $shake-app-bg;
@@ -123,6 +153,7 @@
       background: $potok-app-bg;
     }
     .content-wrap {
+      position: relative;
       width: 50%;
     }
     .keywords {
@@ -205,6 +236,9 @@
 
 .statistics {
   padding: 80px 40px;
+  @include max-width-1024 {
+    padding: 40px 20px;
+  }
   .section-title {
     margin-bottom: 40px;
   
@@ -213,6 +247,9 @@
     display: grid;
     grid-gap: 16px;
     grid-template-columns: repeat(auto-fill, minMax(310px, 1fr));
+    @include max-width-1024 {
+      grid-template-columns: repeat(auto-fill, minMax(200px, 1fr));
+    }
     &__item {
       .numbers {
         display: block;
@@ -223,6 +260,10 @@
         background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        @include max-width-1024 {
+          font-size: 76px;
+          margin-bottom: 0;
+        }
       }
       .description {
         font-weight: 500;
@@ -236,11 +277,18 @@
 .tools {
   position: relative;
   padding: 0 40px;
+  @include max-width-1024 {
+    padding: 0 20px;
+  }
   .tools-wrap {
     padding: 80px 40px 40px;
+    
     background: $main-color;
     color: $white-color;
     border-radius: 16px;
+    @include max-width-1024 {
+      padding: 40px 20px;
+    }
     .section-title {
       color: $white-color;
       margin-bottom: 16px;
@@ -289,8 +337,11 @@
   background: #3A2390;
   background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);
   margin-top: -187px;
-  padding: 267px 0 120px;
+  padding: 267px 40px 120px;
   color: $white-color;
+  @include max-width-1024 {
+    padding: 230px 20px 120px;
+  }
   .get-in-touch-wrap {
     display: flex;
     justify-content: space-between;
