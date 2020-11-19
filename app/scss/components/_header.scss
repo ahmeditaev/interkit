@@ -61,8 +61,7 @@
       background: #3A2390;
       background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);
       
-      transition-property: all;
-      transition-duration: 0.2s;
+      transition: all 0.2s linear;
       
       transform: translate(100%,-100%) scale(0.5);
       border-radius:100%;
