@@ -10,10 +10,8 @@
   .main-logo {
     display: block;
     line-height: 0;
-    @include max-width-1120 {
-      max-width: 150px;
-      width: 100%;
-    }
+    position: relative;
+    z-index: 3;
     img {
       width: 100%;
       height: auto;
@@ -24,36 +22,81 @@
     &__item {
       font-size: 18px;
       margin-right: 20px;
+      > a {
+        display: block;
+      }
     }
   }
   .info {
     display: flex;
+    align-items: center;
     .email {
       font-weight: 600;
       margin-right: 34px;
+      position: relative;
+      z-index: 3;
     }
-    .lang-switcher {
+  }
+  .mobile-lang-switcher-wrap {
+    display: none;
+  }
+  
+  //------------Media Queries-----------//
+  @include max-width-1120 {
+    .main-logo {
+      max-width: 150px;
+      width: 100%;
+    }
+    .nav-menu-list {
       display: flex;
-      .icon {
-        display: block;
-        width: 14px;
-        height: 14px;
-        background: url('../images/lang-icon.svg') 50%/cover no-repeat;
-        margin-right: 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #3A2390;
+      background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);
+      
+      transition-property: all;
+      transition-duration: 0.2s;
+      
+      transform: translate(100%,-100%) scale(0.5);
+      border-radius:100%;
+      &.is-open {
+        transform: translateY(0) scale(1);
+        border-radius:0;
+        .nav-menu-list__item {
+          opacity:1;
+        }
       }
-      &__item {
-        font-size: 14px;
-        line-height: 16px;
+    }
+    .nav-menu-list__item {
+      margin-right: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 40px;
+      line-height: 46px;
+      margin-bottom: 24px;
+      
+      opacity:0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .info {
+      .lang-switcher {
+        display: none;
       }
-      &__item:nth-child(2) {
-        margin-right: 8px;
-      }
-      &__item:not(first-child) {
-        color: rgba(255, 255, 255, 0.48);
-      }
-      &__item.active {
-        color: $white-color;
-      }
+    }
+    .mobile-lang-switcher-wrap {
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 40px;
+      left: 0;
     }
   }
 }
+

@@ -1,0 +1,39 @@
+.lang-switcher {
+  display: flex;
+  .icon {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url('../images/lang-icon.svg') 50%/cover no-repeat;
+    margin-right: 10px;
+  }
+  &__item {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__item:nth-child(2) {
+    margin-right: 8px;
+  }
+  &__item:not(first-child) {
+    color: rgba(255, 255, 255, 0.48);
+  }
+  &__item.active {
+    color: $white-color;
+  }
+  
+  //------------Media Queries-----------//
+  @include max-width-1024 {
+    justify-content: center;
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+    .lang-switcher__item {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    .lang-switcher__item:nth-child(2) {
+      margin-right: 16px;
+    }
+  }
+}

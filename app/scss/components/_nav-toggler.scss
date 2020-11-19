@@ -1,0 +1,39 @@
+.nav-toggler {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  padding: 3px;
+  
+  //------------Media Queries-----------//
+  @include max-width-1024 {
+    display: flex;
+    position: relative;
+    z-index: 3;
+  }
+}
+.nav-toggler::before,
+.nav-toggler::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: $white-color;
+  transition: .3s;
+}
+.nav-toggler::before {
+  transform: translateY(-3px);
+}
+.nav-toggler::after {
+  transform: translateY(3px);
+}
+.nav-toggler.is-open::before {
+  transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.is-open::after {
+  transform: translateY(-2px) rotate(-45deg);
+}
