@@ -125,7 +125,7 @@
     }
   }
   @include max-width-480 {
-    padding: 24px 16px;
+    padding: 24px 16px 40px;
     .section-title {
       margin-bottom: 9px;
     }
@@ -282,6 +282,45 @@
     }
     .app-list__item {
       padding: 40px 20px;
+    }
+  }
+  @include max-width-480 {
+    .section-title {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+    .app-list__item {
+      padding: 40px 16px;
+      .content-wrap {
+        width: 100%;
+      }
+      .title {
+        font-size: 36px;
+        .logo {
+          min-width: 36px;
+          max-width: 36px;
+          height: 36px;
+          margin-right: 12px;
+        }
+      }
+      .description {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 16px;
+      }
+      .button-list {
+        margin-bottom: 24px;
+      }
+      .review__photo {
+        min-width: 40px;
+        height: 40px;
+      }
+      .review__info {
+        .author {
+          font-size: 16px;
+          margin-bottom: 4px;
+        }
+      }
     }
   }
 }
