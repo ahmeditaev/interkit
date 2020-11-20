@@ -23,10 +23,10 @@
             <a href="#about">About us</a>
           </li>
           <li class="nav-menu-list__item">
-            <a href="#our-works">Our works</a>
+            <a href="#services">Services</a>
           </li>
           <li class="nav-menu-list__item">
-            <a href="#statistics">Services</a>
+            <a href="#our-works">Our works</a>
           </li>
           <li class="nav-menu-list__item">
             <a href="#tools">Technologies</a>
@@ -51,7 +51,7 @@
               <a href="#">English</a>
             </li>
             <li class="lang-switcher__item">
-              <a href="#">Русский</a>
+              <a href="#" lang="ru" hreflang="ru">Русский</a>
             </li>
           </ul>
           <!-- nav-toggler for mobile version only -->
@@ -127,7 +127,7 @@
           More than 80 created projects and satisfied clients.
         </p>
       </div>
-      <ul class="advantage-list">
+      <ul id="services" class="advantage-list">
         <li class="advantage-list__item">
           <i class="icon design-icon"></i>
           <h4 class="title">
@@ -585,7 +585,7 @@
         </div>
         <div class="form-wrap">
           <form action="https://formspree.io/f/mrgoljpa" method="POST" class="form">
-            <input type="text" placeholder="Name" name="name" required>
+            <input id="name-field" type="text" placeholder="Name" name="name" required>
             <input type="text" placeholder="Phone number" name="phone" required>
             <input type="email" placeholder="Email" name="email" required>
             <input type="submit" value="Send">

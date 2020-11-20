@@ -51,7 +51,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
     &__description {
       font-size: 32px;
       letter-spacing: .02em;
@@ -73,6 +73,7 @@
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fill, minMax(286px, 1fr));
+    padding-top: 32px;
   }
   .advantage-list__item {
     display: flex;
@@ -131,7 +132,7 @@
     }
     .about-info {
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
       &__description {
         font-size: 16px;
         line-height: 22px;
@@ -155,6 +156,7 @@
     }
     .advantage-list {
       grid-template-columns: repeat(auto-fill, minMax(190px, 1fr));
+      padding-top: 12px;
     }
     .advantage-list__item {
       align-items: flex-start;
