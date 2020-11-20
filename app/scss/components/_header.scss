@@ -97,5 +97,18 @@
       left: 0;
     }
   }
+  @include max-width-480 {
+    .main-logo {
+      max-width: 130px;
+      width: 100%;
+    }
+    .info {
+      .email {
+        font-size: 16px;
+        margin-right: 16px;
+        padding-top: 2px;
+      }
+    }
+  }
 }
 
