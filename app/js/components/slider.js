@@ -1,4 +1,4 @@
-new Splide('.splide', {
+const mainSlider = new Splide('.splide', {
   type: 'fade',
   rewind: true,
   perPage: 1,
@@ -10,5 +10,20 @@ new Splide('.splide', {
     pagination: 'splide__pagination slider-block-pagination',
     page: 'splide__pagination__page slider-block-pagination__item'
   },
-}).mount();
+})
 
+mainSlider.on( 'autoplay:play', function() {
+  const index = mainSlider.index
+  const $root = mainSlider.root
+  const $paginationListButtons = $root.querySelectorAll(`.slider-block-pagination li button` )
+  const classNameForFilledButtons = 'fill-bg'
+
+  if (index > 0 && index <= $paginationListButtons.length - 1) {
+    $paginationListButtons[index - 1].classList.add(classNameForFilledButtons)
+  } else {
+    $paginationListButtons.forEach((item) => item.classList.remove(classNameForFilledButtons) )
+  }
+
+} );
+
+mainSlider.mount();

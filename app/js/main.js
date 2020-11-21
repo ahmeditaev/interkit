@@ -1,7 +1,7 @@
-const navLinks = document.querySelectorAll('.nav-menu-list__item a')
-const nameFormField = document.getElementById('name-field')
+const $navLinks = document.querySelectorAll('.nav-menu-list__item a')
+const $nameFormField = document.getElementById('name-field')
 
-for (const link of navLinks) {
+for (const link of $navLinks) {
   link.addEventListener("click", clickHandler);
 }
 
@@ -17,7 +17,7 @@ function clickHandler(e) {
   });
 
   setTimeout(() => {
-    isFormSection && nameFormField.focus()
+    isFormSection && $nameFormField.focus()
   }, 1000)
 }
 

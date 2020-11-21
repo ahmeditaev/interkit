@@ -113,6 +113,9 @@
         animation: 2s linear 0s infinite slideInFromLeft;
       }
     }
+    &.fill-bg {
+      background: $white-color;
+    }
   }
   
   //------------Media Queries - slider-block-pagination-----------//
