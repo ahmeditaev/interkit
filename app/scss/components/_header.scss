@@ -58,9 +58,9 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background: #3A2390;
-      background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);
-      
+      background: $mobile-menu-bg;
+      background: $mobile-menu-bg-gradient;
+  
       transition: all 0.2s linear;
       
       transform: translate(100%,-100%) scale(0.5);

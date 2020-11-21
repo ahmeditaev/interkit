@@ -1,8 +1,8 @@
 .promo {
   position: relative;
   padding: 32px 40px 60px;
-  background: #0A080D;
-  background: linear-gradient(107.01deg, #0A080D 38.67%, #0B0A0F 203.3%);
+  background: $main-bg;
+  background: $main-bg-gradient;
   .main-title {
     position: absolute;
     font-size: 64px;
@@ -509,8 +509,8 @@
 }
 
 .get-in-touch {
-  background: #3A2390;
-  background: linear-gradient(107.01deg, #3A2390 38.67%, #7BB8DA 203.3%);
+  background: $main-bg;
+  background: $main-bg-gradient;
   margin-top: -187px;
   padding: 267px 40px 120px;
   color: $white-color;
