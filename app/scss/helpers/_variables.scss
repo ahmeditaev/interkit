@@ -12,8 +12,18 @@ $main-bg-gradient: linear-gradient(107.01deg, #1C1049 38.67%, #7BB8DA 203.3%);
 $mobile-menu-bg: #1C1049;
 $mobile-menu-bg-gradient: linear-gradient(107.01deg, #1C1049 38.67%, #7BB8DA 203.3%);
 
+// Shake App
 $shake-app-bg: #0A080D;
 $shake-app-bg-gradient: linear-gradient(0deg, #0A080D, #0A080D), linear-gradient(90.57deg, #0D0B0F 50.98%, #130F17 99.53%);
+
+// Lingvalien App
 $lingvalien-app-bg: #98E2FF;
-$bind-app-bg: radial-gradient(31.36% 81.48% at 75.11% 50%, #323232 0%, #101010 100%);
-$potok-app-bg: #0A0A25;
+$lingvalien-app-bg-image: url("../images/lingvalien-app-bg.svg") 50%/contain repeat;
+
+// Bind App
+$bind-app-bg: #101010;
+$bind-app-bg-gradient: radial-gradient(31.36% 81.48% at 75.11% 50%, #323232 0%, #101010 100%);
+
+// Govoroon App
+$govoroon-app-bg: #685CB7;
+$govoroon-app-bg-image: url("../images/govoroon-app-bg.svg") 50%/contain no-repeat;
