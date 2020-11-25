@@ -1,6 +1,6 @@
 .promo {
   position: relative;
-  padding: 32px 40px 60px;
+  padding: 32px 40px 0;
   background: $main-bg;
   background: $main-bg-gradient;
   .main-title {
@@ -176,7 +176,23 @@
     }
     .content-wrap {
       position: relative;
-      width: 50%;
+      display: flex;
+      align-items: center;
+      .content {
+        width: 50%;
+      }
+      .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin-bottom: -80px;
+        img {
+          max-width: 100%;
+          width: auto;
+          height: auto;
+        }
+      }
     }
     .keywords {
       display: block;
@@ -272,7 +288,9 @@
     .app-list__item {
       padding: 40px 16px;
       .content-wrap {
-        width: 100%;
+        .content {
+          width: 100%;
+        }
       }
       .title {
         font-size: 36px;
