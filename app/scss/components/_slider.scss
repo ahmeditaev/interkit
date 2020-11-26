@@ -52,6 +52,8 @@
     img {
       display: block;
       max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
       width: auto;
       height: auto;
     }
@@ -61,7 +63,14 @@
   }
   
   //------------Media Queries - slider-block-----------//
-  @include max-width-480 {
+  @include max-width-1024 {
+    .slider-block__image {
+      max-width: 400px;
+      max-height: 400px;
+    }
+  }
+  
+  @include max-width-768 {
     height: 430px;
     .slider-block__item {
       flex-direction: column;
@@ -120,7 +129,7 @@
   }
   
   //------------Media Queries - slider-block-pagination-----------//
-  @include max-width-480 {
+  @include max-width-768 {
     top: 30px;
     height: max-content;
   }
