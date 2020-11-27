@@ -61,7 +61,7 @@
   .advantage-list {
     display: grid;
     grid-gap: 40px;
-    grid-template-columns: repeat(auto-fill, minMax(286px, 1fr));
+    grid-template-columns: repeat(auto-fit, minMax(250px, 1fr));
     padding-top: 32px;
   }
   .advantage-list__item {
@@ -102,16 +102,19 @@
   }
   
   //------------Media Queries - About Section-----------//
+  @include max-width-1120 {
+    .advantage-list {
+      grid-template-columns: repeat(auto-fit, minMax(45%, 1fr));
+    }
+  }
   @include max-width-1024 {
     padding: 40px 20px;
-    .advantage-list {
-      grid-template-columns: repeat(auto-fill, minMax(320px, 1fr));
-    }
-    .advantage-list__item {
-      align-items: center;
-      .description {
-        text-align: center;
-      }
+  }
+  @include max-width-768 {
+    .about__description {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 12px;
     }
   }
   @include max-width-480 {
@@ -122,7 +125,6 @@
     .about__description {
       font-size: 16px;
       line-height: 22px;
-      margin-bottom: 12px;
     }
     .advantage-list {
       grid-template-columns: repeat(auto-fill, minMax(190px, 1fr));
@@ -159,6 +161,7 @@
   .app-list__item {
     padding: 80px 40px;
     letter-spacing: 1px;
+    overflow: hidden;
     &.shake-app {
       color: $white-color;
       background: $shake-app-bg;
@@ -285,6 +288,21 @@
       padding: 40px 20px;
     }
   }
+  @include max-width-768 {
+    .app-list__item {
+      .content-wrap {
+        .content {
+          width: 100%;
+        }
+        .title {
+          font-size: 54px;
+        }
+        .image {
+          display: none;
+        }
+      }
+    }
+  }
   @include max-width-480 {
     .section-title {
       padding: 0 16px;
@@ -292,11 +310,6 @@
     }
     .app-list__item {
       padding: 40px 16px;
-      .content-wrap {
-        .content {
-          width: 100%;
-        }
-      }
       .title {
         font-size: 36px;
         .logo {
@@ -336,7 +349,7 @@
   .statistics-list {
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minMax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minMax(200px, 1fr));
     &__item {
       .numbers {
         display: block;
@@ -359,14 +372,16 @@
   //------------Media Query - Statistics Section-----------//
   @include max-width-1024 {
     padding: 40px 20px;
-    .statistics-list {
-      grid-template-columns: repeat(auto-fill, minMax(200px, 1fr));
-    }
     .statistics-list__item {
       .numbers {
         font-size: 76px;
         margin-bottom: 0;
       }
+    }
+  }
+  @include max-width-768 {
+    .statistics-list {
+      grid-template-columns: repeat(auto-fit, minMax(45%, 1fr));
     }
   }
   @include max-width-480 {
@@ -375,7 +390,7 @@
       margin-bottom: 24px;
     }
     .statistics-list {
-    
+      grid-template-columns: repeat(auto-fit, minMax(200px, 1fr));
     }
     .statistics-list__item {
       .numbers {
@@ -445,10 +460,9 @@
       padding: 40px 20px;
     }
   }
-  @include max-width-480 {
-    padding: 0 5px;
+  @include max-width-768 {
     .tools-wrap {
-      padding: 24px 24px 0;
+      padding-bottom: 0;
       .section-title {
         margin-bottom: 0;
       }
@@ -460,13 +474,8 @@
       }
       .info {
         width: 100%;
-        .title {
-          font-size: 36px;
-        }
         .description {
-          font-size: 16px;
-          line-height: 22px;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
         }
       }
       .icon-list {
@@ -480,6 +489,24 @@
             height: auto;
             margin-right: 8px;
           }
+        }
+      }
+    }
+  }
+  @include max-width-480 {
+    padding: 0 5px;
+    .tools-wrap {
+      padding: 24px 24px 0;
+    }
+    .tools-list__item {
+      .info {
+        .title {
+          font-size: 36px;
+        }
+        .description {
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 16px;
         }
       }
     }
@@ -576,31 +603,9 @@
   //------------Media Queries - Get in touch Section-----------//
   @include max-width-1024 {
     padding: 230px 20px 120px;
-  }
-  @include max-width-480 {
-    margin-top: -57px;
-    padding: 82px 16px 24px;
-    .get-in-touch-wrap {
-      display: block;
-    }
-    .section-title {
-      margin-bottom: 24px;
-    }
-    .chat-links {
-      margin-bottom: 24px;
-    }
-    .phone-number {
-      font-size: 24px;
-      line-height: 34px;
-      margin-bottom: 4px;
-    }
-    .email {
-      font-size: 18px;
-      line-height: 25px;
-      margin-bottom: 24px;
-    }
     .form-wrap {
-      padding: 16px;
+      max-width: 500px;
+      padding: 25px;
       input[type="text"] {
         max-width: 100%;
         margin-bottom: 8px;
@@ -612,6 +617,43 @@
       input[type="submit"] {
         margin-top: 16px;
       }
+    }
+  }
+  @include max-width-768 {
+    padding: 200px 20px 50px;
+    .get-in-touch-wrap {
+      display: block;
+    }
+    .section-title {
+      margin-bottom: 24px;
+    }
+    .chat-links {
+      margin-bottom: 24px;
+    }
+    .phone-number {
+      margin-bottom: 4px;
+    }
+    .email {
+      margin-bottom: 24px;
+    }
+    .form-wrap {
+      padding: 16px;
+      max-width: 100%;
+    }
+  }
+  @include max-width-480 {
+    margin-top: -57px;
+    padding: 82px 16px 24px;
+    
+    .phone-number {
+      font-size: 24px;
+      line-height: 34px;
+      margin-bottom: 4px;
+    }
+    .email {
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 24px;
     }
   }
 }
