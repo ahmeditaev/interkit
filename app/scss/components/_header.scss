@@ -24,6 +24,24 @@
       margin-right: 20px;
       > a {
         display: block;
+        position: relative;
+        &:hover::before {
+          left: 0;
+          right: 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          left: 50%;
+          right: 50%;
+          bottom: 0;
+          background: $white-color;
+          height: 1px;
+          transition-property: left, right;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-out;
+        }
       }
     }
   }
