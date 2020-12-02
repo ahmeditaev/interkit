@@ -2,7 +2,6 @@
   position: relative;
   padding: 32px 40px 0;
   background: $main-bg;
-  background: $main-bg-gradient;
   .main-title {
     position: absolute;
     font-size: 64px;
@@ -166,6 +165,11 @@
       color: $white-color;
       background: $shake-app-bg;
       background: $shake-app-bg-gradient;
+      .content-wrap {
+        .image {
+          height: 120%;
+        }
+      }
     }
     &.lingvalien-app {
       background: $lingvalien-app-bg $lingvalien-app-bg-image;
@@ -194,11 +198,13 @@
         justify-content: center;
         align-items: center;
         width: 50%;
-        margin-bottom: -80px;
+        height: 100%;
+        position: absolute;
+        right: 0;
         img {
-          max-width: 100%;
-          width: auto;
-          height: auto;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
       }
     }
@@ -256,6 +262,7 @@
     .review__photo {
       display: block;
       min-width: 56px;
+      max-width: 56px;
       height: 56px;
       border-radius: 50%;
       overflow: hidden;
@@ -310,31 +317,34 @@
     }
     .app-list__item {
       padding: 40px 16px;
-      .title {
-        font-size: 36px;
-        .logo {
-          min-width: 36px;
-          max-width: 36px;
-          height: 36px;
-          margin-right: 12px;
+      .content-wrap {
+        .title {
+          font-size: 36px;
+          .logo {
+            min-width: 36px;
+            max-width: 36px;
+            height: 36px;
+            margin-right: 12px;
+          }
         }
-      }
-      .description {
-        font-size: 16px;
-        line-height: 22px;
-        margin-bottom: 16px;
-      }
-      .button-list {
-        margin-bottom: 24px;
-      }
-      .review__photo {
-        min-width: 40px;
-        height: 40px;
-      }
-      .review__info {
-        .author {
+        .description {
           font-size: 16px;
-          margin-bottom: 4px;
+          line-height: 22px;
+          margin-bottom: 16px;
+        }
+        .button-list {
+          margin-bottom: 24px;
+        }
+        .review__photo {
+          min-width: 40px;
+          max-width: 40px;
+          height: 40px;
+        }
+        .review__info {
+          .author {
+            font-size: 16px;
+            margin-bottom: 4px;
+          }
         }
       }
     }
@@ -425,7 +435,7 @@
     padding: 24px 0 40px;
     border-bottom: 1px solid rgba(255,255,255,.16);
     .info {
-      width: 45%;
+      width: 50%;
       .title {
         font-size: 48px;
         letter-spacing: 2px;
@@ -439,7 +449,7 @@
     .icon-list {
       display: grid;
       grid-gap: 20px;
-      width: 50%;
+      width: 40%;
       grid-template-columns: repeat(auto-fill, minMax(110px, 1fr));
       &__item {
         display: flex;

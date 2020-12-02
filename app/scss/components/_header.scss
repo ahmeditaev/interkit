@@ -90,16 +90,18 @@
       height: 100vh;
       background: $mobile-menu-bg;
       background: $mobile-menu-bg-gradient;
-  
-      transition: all 0.2s linear;
+      overflow: hidden;
       
-      transform: translate(100%,-100%) scale(0.5);
-      border-radius:100%;
+      transition: all 0.2s linear;
+  
+      transform: translateY(-100%);
       &.is-open {
-        transform: translateY(0) scale(1);
-        border-radius:0;
+        transform: translateY(0);
         .nav-menu-list__item {
           opacity:1;
+        }
+        li.mobile-lang-switcher-wrap {
+          bottom: 40px;
         }
       }
     }
@@ -127,8 +129,10 @@
       display: block;
       width: 100%;
       position: absolute;
-      bottom: 40px;
       left: 0;
+  
+      bottom: -40px;
+      transition: bottom 0.3s ease-in-out;
     }
   }
   @include max-width-768 {

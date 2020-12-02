@@ -6,7 +6,10 @@ const mainSlider = new Splide('.splide', {
   pauseOnHover: false,
   pauseOnFocus: false,
   drag: false,
+
+  //And go to ../../scss/components/_slider.scss and change interval to the same value on line 123
   interval: 2000,
+
   classes: {
     arrows: 'splide__arrows slider-block__arrows',
     pagination: 'splide__pagination slider-block-pagination',
