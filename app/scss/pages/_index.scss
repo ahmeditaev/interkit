@@ -181,10 +181,20 @@
       background: $bind-app-bg;
       background: $bind-app-bg-gradient;
       color: $white-color;
+      .content-wrap {
+        .image {
+          height: 120%;
+        }
+      }
     }
     &.govoroon-app {
       color: $white-color;
       background: $govoroon-app-bg $govoroon-app-bg-image;
+      .content-wrap {
+        .image {
+          height: 120%;
+        }
+      }
     }
     .content-wrap {
       position: relative;
