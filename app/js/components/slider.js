@@ -8,7 +8,7 @@ const mainSlider = new Splide('.splide', {
   drag: false,
 
   //And go to ../../scss/components/_slider.scss and change interval to the same value on line 123
-  interval: 2000,
+  interval: 3000,
 
   classes: {
     arrows: 'splide__arrows slider-block__arrows',
