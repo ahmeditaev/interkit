@@ -1,46 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="${{ _lang_ }}$">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="./favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+  <link rel="icon" href="./../favicon.png" type="image/png">
+  <link rel="stylesheet" href="./../assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="./../assets/css/styles.min.css">
   <title>INTERKIT</title>
 </head>
 <body>
 <div id="page">
-  <a href="#" id="scroll-to-top"></a>
   <section id="promo" class="promo">
     <div class="container">
-      <header class="header">
-        <a href="#" class="main-logo">
-          <img width="198" height="24" src="assets/images/logo.svg" alt="INTERKIT">
+      <header id="header" class="header">
+        <a id="main-logo" href="#promo" class="main-logo">
+          <img width="198" height="24" src="./../assets/images/logo.svg" alt="INTERKIT">
         </a>
         <ul class="nav-menu-list">
+          ${{# common.navMenu }}$
           <li class="nav-menu-list__item">
-            <a href="#about">About us</a>
+            <a href="${{ link }}$">${{ name }}$</a>
           </li>
-          <li class="nav-menu-list__item">
-            <a href="#services">Services</a>
-          </li>
-          <li class="nav-menu-list__item">
-            <a href="#our-works">Our works</a>
-          </li>
-          <li class="nav-menu-list__item">
-            <a href="#tools">Technologies</a>
-          </li>
-          <li class="nav-menu-list__item">
-            <a href="#form">Get in touch</a>
-          </li>
+          ${{/ common.navMenu }}$
           <li class="mobile-lang-switcher-wrap">
             <ul class="lang-switcher">
               <li class="icon"></li>
-              <li class="lang-switcher__item active">English</li>
-              <li class="lang-switcher__item">Русский</li>
+              <li class="lang-switcher__item ${{ common.en }}$">
+                <a href="/en">English</a>
+              </li>
+              <li class="lang-switcher__item ${{ common.ru }}$">
+                <a href="/ru" lang="ru" hreflang="ru">Русский</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -49,11 +42,11 @@
           <!--TODO: Should be rewrite the switcher according require-->
           <ul class="lang-switcher">
             <li class="icon"></li>
-            <li class="lang-switcher__item active">
-              <a href="#">English</a>
+            <li class="lang-switcher__item ${{ common.en }}$">
+              <a href="/en">English</a>
             </li>
-            <li class="lang-switcher__item">
-              <a href="#" lang="ru" hreflang="ru">Русский</a>
+            <li class="lang-switcher__item ${{ common.ru }}$">
+              <a href="/ru" lang="ru" hreflang="ru">Русский</a>
             </li>
           </ul>
           <!-- nav-toggler for mobile version only -->
@@ -61,53 +54,25 @@
         </div>
       </header>
       <h1 class="main-title">
-        <span>Mobile Software</span>
-        Development Company
+        <span>${{ common.mainTitle.top }}$</span>
+        ${{ common.mainTitle.bottom }}$
       </h1>
       <!--Default classname: splide; Custom classname: slider-block-->
       <div class="splide slider-block">
         <div class="splide__track">
           <ul class="splide__list">
+            ${{# common.sliderList }}$
             <!--Default classname: splide__slide; Custom classname: slider-block__item-->
             <li class="splide__slide slider-block__item">
-              <a href="#" target="_blank" class="slider-block__title">
-                See what we do for Shake App
+              <a href="${{ link }}$" target="_blank" class="slider-block__title">
+                ${{ title }}$
                 <i class="arrow-right"></i>
               </a>
               <div class="slider-block__image">
-                <img src="assets/images/shake-app-image.svg" alt="Shake App">
+                <img src="${{ imgSrc }}$" alt="${{ name }}$">
               </div>
             </li>
-            <!--Default classname: splide__slide; Custom classname: slider-block__item-->
-            <li class="splide__slide slider-block__item">
-              <a href="#" target="_blank" class="slider-block__title">
-                See what we do for Lingvalien
-                <i class="arrow-right"></i>
-              </a>
-              <div class="slider-block__image">
-                <img src="assets/images/lingvalien-app-image.svg" alt="Lingvalien">
-              </div>
-            </li>
-            <!--Default classname: splide__slide; Custom classname: slider-block__item-->
-            <li class="splide__slide slider-block__item">
-              <a href="#" target="_blank" class="slider-block__title">
-                See what we do for BindAp
-                <i class="arrow-right"></i>
-              </a>
-              <div class="slider-block__image">
-                <img src="assets/images/bind-app-image.svg" alt="BindAp">
-              </div>
-            </li>
-            <!--Default classname: splide__slide; Custom classname: slider-block__item-->
-            <li class="splide__slide slider-block__item">
-              <a href="#" target="_blank" class="slider-block__title">
-                See what we do for Govoroon
-                <i class="arrow-right"></i>
-              </a>
-              <div class="slider-block__image">
-                <img src="assets/images/govoroon-app-image.svg" alt="Govoroon">
-              </div>
-            </li>
+            ${{/ common.sliderList }}$
           </ul>
         </div>
       </div>
@@ -116,272 +81,84 @@
   <section id="about" class="about">
     <div class="container">
       <h2 class="section-title">
-        About
+        ${{ common.aboutSection.title }}$
       </h2>
       <p class="about__description">
-        INTERKIT is a digital transformation consultancy company that provides full-cycle software in mobile app
-        development. We create award-winning digital products and services for startups.
-        It is important for us to satisfy our client’s requirements.
+        ${{ common.aboutSection.description }}$
       </p>
       <ul id="services" class="advantage-list">
+        ${{# common.aboutSection.advantageList }}$
         <li class="advantage-list__item">
-          <i class="icon design-icon"></i>
+          <i class="icon ${{ iconClassName }}$"></i>
           <h4 class="title">
-            Interface Design
+            ${{ title }}$
           </h4>
           <p class="description">
-            Our design team knows how to make users be attracted by the app. We collaborate with our client and create
-            the user-friendly and informative interface
+            ${{ description }}$
           </p>
         </li>
-        <li class="advantage-list__item">
-          <i class="icon audit-icon"></i>
-          <h4 class="title">
-            Application Audit
-          </h4>
-          <p class="description">
-            Application Audit allows to detect lack in codebase and generate complex of solutions which can stabilize
-            and optimize your application.
-          </p>
-        </li>
-        <li class="advantage-list__item">
-          <i class="icon support-icon"></i>
-          <h4 class="title">
-            Support & Maintenance
-          </h4>
-          <p class="description">
-            Our team offers support service for deployed application according to defined SLA. Troubleshooting, new
-            features development and analytics are the common services
-          </p>
-        </li>
-        <li class="advantage-list__item">
-          <i class="icon outstaff-icon"></i>
-          <h4 class="title">
-            Outstaff
-          </h4>
-          <p class="description">
-            We offer the clients’ team extension with software and hardware engineers.
-            The engineers are available at client’s office or remotely
-          </p>
-        </li>
+        ${{/ common.aboutSection.advantageList }}$
       </ul>
     </div>
   </section>
   <section id="our-works" class="our-works">
     <h2 class="section-title">
       <div class="container">
-        Our works
+        ${{ common.ourWorksSection.title }}$
       </div>
     </h2>
     <div class="app-list">
-      <div class="app-list__item shake-app">
+      ${{# common.ourWorksSection.appList }}$
+      <div class="app-list__item ${{ className }}$">
         <div class="container">
           <div class="content-wrap">
             <div class="content">
-              <span class="keywords">
-            Android・iOS・UX/UI Design
-          </span>
+              <span class="keywords">${{ keywords }}$</span>
               <h3 class="title">
-                Shake App
+                ${{ &logo }}$
+                ${{ title }}$
               </h3>
-              <p class="description">
-                The alarm clock App designed especially for the deaf and hard of hearing people. Second place of the
-                Facebook Developer Circles startups contest
-              </p>
+              <p class="description">${{ description }}$</p>
               <div class="button-list">
-                <a href="#" class="button-list__item google-play"></a>
-                <a href="#" class="button-list__item app-store"></a>
+                ${{# links}}$
+                <a href="${{ link }}$" target="_blank" class="button-list__item ${{ key }}$"></a>
+                ${{/ links}}$
               </div>
               <div class="review">
-              <span class="review__photo">
-                <img src="assets/images/evgeny-fomin-photo.svg" alt="Author's photo">
-              </span>
+                  <span class="review__photo">
+                    <img src="${{ review.photoSrc }}$" alt="Author's photo">
+                  </span>
                 <div class="review__info">
-                  <h5 class="author">
-                    Evgeny Fomin
-                  </h5>
-                  <p class="description">
-                    “It was a great success to meet the INTERKIT team. Participation in a socially significant project
-                    indicates that the right values are at the heart of the company's culture. I liked working with
-                    responsible and smart people on the project ShakeUp”
-                  </p>
+                  <h5 class="author">${{ review.author }}$</h5>
+                  <p class="description">${{ review.description }}$</p>
                 </div>
               </div>
             </div>
             <div class="image">
-              <img width="510" height="548" src="assets/images/shake-app-image.svg" alt="Shake App">
+              <img src="${{ imageSrc }}$" alt="${{ title }}$">
             </div>
           </div>
         </div>
       </div>
-      <div class="app-list__item lingvalien-app">
-        <div class="container">
-          <div class="content-wrap">
-            <div class="content">
-              <span class="keywords">
-              Android
-            </span>
-              <h3 class="title">
-              <span class="logo">
-                <img src="assets/images/lingvalien-app-logo.svg" alt="Lingvalien app logo">
-              </span>
-                Lingvalien
-              </h3>
-              <p class="description">
-                Want to learn English? Then jump into a plate and fly to the ground. Already, Lingvalien allows you to
-                learn English with your own alien, search for details and return home, tens of thousands of words,
-                phrases, and grammar rules, fight on the map with other players, learn the language through celebrity
-                tweets.
-              </p>
-              <div class="button-list">
-                <a href="#" class="button-list__item google-play"></a>
-              </div>
-              <div class="review">
-              <span class="review__photo">
-                <img src="assets/images/vadim-bondar-photo.svg" alt="Author's photo">
-              </span>
-                <div class="review__info">
-                  <h5 class="author">
-                    Vadim Bondar
-                  </h5>
-                  <p class="description">
-                    “We had really complex tasks during our product development. INTERKIT expertise allowed us
-                    to solve all of them clearly. They are responsible and really good guys”
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="image">
-              <img width="636" height="414" src="assets/images/lingvalien-app-image.svg" alt="Lingvalien App">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="app-list__item bind-app">
-        <div class="container">
-          <div class="content-wrap">
-            <div class="content">
-              <span class="keywords">
-              Android・iOS・UX/UI Design
-            </span>
-              <h3 class="title">
-              <span class="logo">
-                <img src="assets/images/bind-app-logo.svg" alt="Bind app logo">
-              </span>
-                BindAp
-              </h3>
-              <p class="description">
-                We have set ourselves the ambitious goal of uniting all private households in one place, linking them to
-                the participants in the housing and public utilities market and the state, involving business in the
-                sphere of consumer goods and services, as well as to provide real estate market participants with a
-                convenient and safe platform for carrying out transactions.
-              </p>
-              <div class="button-list">
-                <a href="#" class="button-list__item google-play"></a>
-                <a href="#" class="button-list__item app-store"></a>
-              </div>
-              <div class="review">
-              <span class="review__photo">
-                <img src="assets/images/sergey-photo.svg" alt="Author's photo">
-              </span>
-                <div class="review__info">
-                  <h5 class="author">
-                    Sergey Skripnik
-                  </h5>
-                  <p class="description">
-                    “We had outstaff engineers from INTERKIT team. These guys are professionals. It was an exciting
-                    experience working with them”
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="image">
-              <img width="555" height="562" src="assets/images/bind-app-image.svg" alt="BindApp">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="app-list__item govoroon-app">
-        <div class="container">
-          <div class="content-wrap">
-            <div class="content">
-              <span class="keywords">
-              Android・iOS・UX/UI Design
-            </span>
-              <h3 class="title">
-              <span class="logo">
-                <img src="assets/images/govoroon-app-logo.svg" alt="Govoroon app logo">
-              </span>
-                Govoroon
-              </h3>
-              <p class="description">
-                The Govoroon app is developed to record children’s statements and share them in
-                social networks
-              </p>
-              <div class="button-list">
-                <a href="#" class="button-list__item google-play"></a>
-                <a href="#" class="button-list__item app-store"></a>
-              </div>
-              <div class="review">
-              <span class="review__photo">
-                <img src="assets/images/tatyana-photo.svg" alt="Author's photo">
-              </span>
-                <div class="review__info">
-                  <h5 class="author">
-                    Tatyana Gedzberg
-                  </h5>
-                  <p class="description">
-                    “Some feedback”
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="image">
-              <img width="664" height="558" src="assets/images/govoroon-app-image-2.svg" alt="Govoroon App">
-            </div>
-          </div>
-        </div>
-      </div>
+      ${{/ common.ourWorksSection.appList }}$
     </div>
   </section>
   <section id="statistics" class="statistics">
     <div class="container">
       <h2 class="section-title">
-        Some real statistics
+        ${{ common.statisticsSection.title }}$
       </h2>
       <ul class="statistics-list">
+        ${{# common.statisticsSection.list }}$
         <li class="statistics-list__item">
           <h4 class="numbers">
-            80+
+            ${{ numbers }}$
           </h4>
           <p class="description">
-            More than 80 created projects and satisfied clients.
+            ${{ description }}$
           </p>
         </li>
-        <li class="statistics-list__item">
-          <h4 class="numbers">
-            1.1M
-          </h4>
-          <p class="description">
-            Users downloaded apps that we developed.
-          </p>
-        </li>
-        <li class="statistics-list__item">
-          <h4 class="numbers">
-            300k
-          </h4>
-          <p class="description">
-            Monthly Active Users in our apps.
-          </p>
-        </li>
-        <li class="statistics-list__item">
-          <h4 class="numbers">
-            4.8
-          </h4>
-          <p class="description">
-            Average score of our apps in App Store & Play Market
-          </p>
-        </li>
+        ${{/ common.statisticsSection.list }}$
       </ul>
     </div>
   </section>
@@ -389,175 +166,29 @@
     <div class="container">
       <div class="tools-wrap">
         <h2 class="section-title">
-          Technologies & Tools
+          ${{ common.toolsSection.title }}$
         </h2>
         <div class="tools-list">
+          ${{# common.toolsSection.list }}$
           <div class="tools-list__item">
             <div class="info">
               <h4 class="title">
-                Design
+                ${{ title }}$
               </h4>
               <p class="description">
-                We use well-proven tools to make the design which satisfies the client’s and users’ needs
+                ${{ description }}$
               </p>
             </div>
             <ul class="icon-list">
+              ${{# iconList }}$
               <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/design/figma.svg" alt="Figma Logo">
-                Figma
+                <img width="28" height="28" src="${{ iconSrc }}$" alt="${{ name }}$ Logo">
+                ${{ name }}$
               </li>
-              <li class="icon-list__item">
-                <img width="31" height="28" src="assets/images/tools-icons/design/sketch.svg" alt="Sketch Logo">
-                Sketch
-              </li>
-              <li class="icon-list__item">
-                <img width="36" height="28" src="assets/images/tools-icons/design/zeplin.svg" alt="Zeplin Logo">
-                Zeplin
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/design/photoshop.svg" alt="Photoshop Logo">
-                Photoshop
-              </li>
-              <li class="icon-list__item">
-                <img width="29" height="28" src="assets/images/tools-icons/design/adobe-illustrator.svg"
-                     alt="Illustrator Logo">
-                Illustrator
-              </li>
-              <li class="icon-list__item">
-                <img width="30" height="28" src="assets/images/tools-icons/design/after-effects.svg"
-                     alt="After Effects Logo">
-                After Effects
-              </li>
+              ${{/ iconList}}$
             </ul>
           </div>
-          <div class="tools-list__item">
-            <div class="info">
-              <h4 class="title">
-                Backend
-              </h4>
-              <p class="description">
-                We create reliable, scalable, high-performing systems using modern technology stack to handle complex
-                operations
-              </p>
-            </div>
-            <ul class="icon-list">
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/backend/python.svg" alt="Python Logo">
-                Python
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/backend/js.svg" alt="JavaScript Logo">
-                JavaScript
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/backend/node-js.svg" alt="Node.Js Logo">
-                Node.Js
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/backend/php.svg" alt="PHP Logo">
-                PHP
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="27" src="assets/images/tools-icons/backend/spring.svg" alt="Srping Logo">
-                Spring
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/backend/golang.svg"
-                     alt="GO Logo">
-                GO
-              </li>
-            </ul>
-          </div>
-          <div class="tools-list__item">
-            <div class="info">
-              <h4 class="title">
-                Mobile
-              </h4>
-              <p class="description">
-                We have a solid experience in building responsive and extendable mobile apps using our best practices
-              </p>
-            </div>
-            <ul class="icon-list">
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/mobile/kotlin.svg" alt="Kotlin Logo">
-                Kotlin
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/mobile/java.svg" alt="Java Logo">
-                Java
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/mobile/objective-c.svg"
-                     alt="Objective-C Logo">
-                Objective - C
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/mobile/swift.svg" alt="Swift Logo">
-                Swift
-              </li>
-            </ul>
-          </div>
-          <div class="tools-list__item">
-            <div class="info">
-              <h4 class="title">
-                Infrastructure
-              </h4>
-              <p class="description">
-                We deliver all environments by using CI/CD best practices coupled with right tooling and automated test
-                cycles
-              </p>
-            </div>
-            <ul class="icon-list">
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/infrastructure/aws.svg"
-                     alt="Amazon Web Services Logo">
-                Amazon Web Services
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/infrastructure/gitlab-ci.svg"
-                     alt="Gitlab Cl Logo">
-                Gitlab Cl
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/infrastructure/azure.svg" alt="Azure Logo">
-                Azure
-              </li>
-            </ul>
-          </div>
-          <div class="tools-list__item">
-            <div class="info">
-              <h4 class="title">
-                Project Management
-              </h4>
-              <p class="description">
-                We have automated business processes due to well-proven tools which are used in it
-              </p>
-            </div>
-            <ul class="icon-list">
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/management/trello.svg" alt="Trello Logo">
-                Trello
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/management/jira.svg"
-                     alt="Atlassian Jira Logo">
-                Atlassian Jira
-              </li>
-              <li class="icon-list__item">
-                <img width="27" height="28" src="assets/images/tools-icons/management/slack.svg" alt="Slack Logo">
-                Slack
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/management/skype.svg" alt="Skype Logo">
-                Skype
-              </li>
-              <li class="icon-list__item">
-                <img width="28" height="28" src="assets/images/tools-icons/management/google-meet.svg"
-                     alt="Google Meet Logo">
-                Google Meet
-              </li>
-            </ul>
-          </div>
+          ${{/ common.toolsSection.list }}$
         </div>
       </div>
     </div>
@@ -567,37 +198,35 @@
       <div class="get-in-touch-wrap">
         <div class="info">
           <h2 class="section-title">
-            Get in touch
+            ${{ common.formSection.title }}$
           </h2>
           <div class="chat-links">
-            <!--  https://t.me/account-name  -->
-            <a class="chat-links__item telegram" href="#">
-              <img width="44" height="44" src="assets/images/telegram-icon.svg" alt="Telegram Icon">
+            ${{# common.formSection.chatLinks }}$
+            <a class="chat-links__item ${{key}}$" target="_blank" href="${{ link }}$">
+              <img width="44" height="44" src="${{ iconSrc }}$" alt="${{ key }}$ Icon">
             </a>
-            <!--  https://wa.me/1XXXXXXXXXX  -->
-            <a class="chat-links__item whatsapp" href="#">
-              <img width="44" height="44" src="assets/images/whatsapp-icon.svg" alt="WhatsApp Icon">
-            </a>
+            ${{/ common.formSection.chatLinks }}$
           </div>
-          <a class="phone-number" href="tel:77028034333">
-            +7 (702) 803 43-33
+          <a class="phone-number" href="${{ common.formSection.phone.link }}$">
+            ${{ common.formSection.phone.numbers }}$
           </a>
-          <span class="email">contact@interkit.io</span>
+          <span class="email">${{ common.formSection.email }}$</span>
         </div>
         <div class="form-wrap">
-          <form action="https://formspree.io/f/mrgoljpa" method="POST" class="form">
-            <input id="name-field" type="text" placeholder="Name" name="name" required>
-            <input type="text" placeholder="Phone number" name="phone" required>
-            <input type="email" placeholder="Email" name="email" required>
-            <input type="submit" value="Send">
+          <form action="${{ common.formSection.form.actionLink }}$" method="POST" class="form">
+            ${{# common.formSection.form.inputs }}$
+            <input id="${{ id }}$" type="${{ type }}$" placeholder="${{ placeholder }}$" name="${{ name }}$" required>
+            ${{/ common.formSection.form.inputs }}$
+            <input type="submit" value="${{ common.formSection.form.submit }}$">
           </form>
         </div>
       </div>
     </div>
   </section>
+  <span id="copyright"></span>
 </div>
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-<script async defer src="assets/js/app.min.js"></script>
+<script async defer src="./../assets/js/app.min.js"></script>
 </body>
 </html>

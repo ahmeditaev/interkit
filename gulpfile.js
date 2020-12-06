@@ -9,14 +9,14 @@ const browserSync = require('browser-sync').create();
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const replace = require('gulp-replace');
 const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
+const i18n = require('gulp-html-i18n')
 
 const paths = {
-  html: {
-    src: './app/**/*.html',
+  localize: {
+    src: './app/lang',
     dest: './build'
   },
   styles: {
@@ -43,22 +43,17 @@ const paths = {
 
 const clean = () => del(['./build']);
 
-// Cache busting to prevent browser caching issues
-const curTime = new Date().getTime();
-const cacheBust = () =>
+const localize = () =>
   gulp
-    .src(paths.html.src)
+    .src('./app/index.html')
     .pipe(plumber())
-    .pipe(replace(/cb=\d+/g, 'cb=' + curTime))
-    .pipe(gulp.dest(paths.html.dest));
-
-
-// Copies all html files
-const html =() =>
-  gulp
-    .src(paths.html.src)
-    .pipe(plumber())
-    .pipe(gulp.dest(paths.html.dest));
+    .pipe(i18n({
+      langDir: paths.localize.src,
+      trace: true,
+      createLangDirs: true,
+      renderEngine: 'mustache'
+    }))
+    .pipe(gulp.dest(paths.localize.dest));
 
 // Convert scss to css, auto-prefix and rename into styles.min.css
 const styles = () =>
@@ -121,7 +116,10 @@ const fonts = () =>
 function watchFiles() {
   browserSync.init({
     server: {
-      baseDir: './build'
+      baseDir: './build',
+      routes: {
+        '/': './build/en'
+      }
     },
     notify: false
   });
@@ -131,13 +129,13 @@ function watchFiles() {
   gulp.watch(paths.scripts.src, scripts).on('change', browserSync.reload);
   gulp.watch(paths.images.src, images).on('change', browserSync.reload);
   gulp.watch(paths.favicon.src, favicon).on('change', browserSync.reload);
-  gulp.watch('./app/*.html', html).on('change', browserSync.reload);
+  gulp.watch(paths.localize.src, localize).on('change', browserSync.reload);
+  gulp.watch('./app/*.html', localize).on('change', browserSync.reload);
 }
 
 const build = gulp.series(
   clean,
-  gulp.parallel(styles, scripts, images, fonts, favicon),
-  cacheBust
+  gulp.parallel(localize, styles, scripts, images, fonts, favicon)
 );
 
 const watch = gulp.series(build, watchFiles);

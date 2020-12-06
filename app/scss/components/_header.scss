@@ -7,6 +7,7 @@
   @extend .base-flex-style;
   justify-content: space-between;
   color: $white-color;
+  transition: background 0.25s ease-in-out;
   .main-logo {
     display: block;
     line-height: 0;
@@ -58,6 +59,16 @@
   .mobile-lang-switcher-wrap {
     display: none;
   }
+  &.header-fixed {
+    position: fixed;
+    background: #18192d;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 20px 50px;
+    z-index: 9;
+    opacity: 1;
+  }
   
   //------------Media Queries-----------//
   @include max-width-1120 {
@@ -93,7 +104,7 @@
       overflow: hidden;
       
       transition: all 0.2s linear;
-  
+      
       transform: translateY(-100%);
       &.is-open {
         transform: translateY(0);
@@ -130,9 +141,12 @@
       width: 100%;
       position: absolute;
       left: 0;
-  
+      
       bottom: -40px;
       transition: bottom 0.3s ease-in-out;
+    }
+    &.header-fixed {
+      padding: 15px 20px;
     }
   }
   @include max-width-768 {
@@ -152,6 +166,9 @@
         margin-right: 16px;
         padding-top: 2px;
       }
+    }
+    &.header-fixed {
+      padding: 16px;
     }
   }
 }

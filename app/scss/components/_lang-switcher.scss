@@ -10,6 +10,10 @@
   &__item {
     font-size: 14px;
     line-height: 16px;
+    transition: color 0.25s ease-in-out;
+    &:hover {
+      color: $white-color;
+    }
   }
   &__item:nth-child(2) {
     margin-right: 8px;

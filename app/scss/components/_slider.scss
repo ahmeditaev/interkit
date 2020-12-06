@@ -17,6 +17,18 @@
   background: #FFFFFF;
 }
 
+@keyframes arrowAnimation {
+  0% {
+    margin-left: 16px;
+  }
+  50% {
+    margin-left: 24px;
+  }
+  100% {
+    margin-left: 16px;
+  }
+}
+
 //Custom style for slider
 .slider-block {
   height: 570px;
@@ -38,6 +50,7 @@
       height: 8px;
       background: url('../images/arrow-right-icon.svg') 50%/cover no-repeat;
       margin-left: 16px;
+      animation: 0.8s ease-in-out 0s infinite arrowAnimation;
     }
   }
   &__image {
