@@ -19,7 +19,7 @@
         <a id="main-logo" href="#promo" class="main-logo">
           <img width="198" height="24" src="./../assets/images/logo.svg" alt="INTERKIT">
         </a>
-        <ul class="nav-menu-list">
+        <ul id="nav-menu" class="nav-menu-list">
           ${{# common.navMenu }}$
           <li class="nav-menu-list__item">
             <a href="${{ link }}$">${{ name }}$</a>
@@ -69,6 +69,7 @@
                 <i class="arrow-right"></i>
               </a>
               <div class="slider-block__image">
+<!--                <img src="${{ imgSrc }}$" class="injectable" alt="${{ name }}$">-->
                 <img src="${{ imgSrc }}$" alt="${{ name }}$">
               </div>
             </li>
@@ -227,6 +228,7 @@
 </div>
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@iconfu/svg-inject"></script>
 <script async defer src="./../assets/js/app.min.js"></script>
 </body>
 </html>
